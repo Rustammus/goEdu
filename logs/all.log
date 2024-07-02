@@ -1,0 +1,164 @@
+time="2024-06-22T16:20:25+05:00" level=info msg="env: CONFIG_FILE not set. Default: \"config.yaml\"" func="goEdu/internal/config.GetConfig.func1()" file="config.go:36"
+time="2024-06-22T16:20:25+05:00" level=debug msg="Try to read config file config.yaml" func="goEdu/internal/config.GetConfig.func1()" file="config.go:39"
+time="2024-06-22T16:20:25+05:00" level=debug msg="Config file read. Config: {\"Server\":{\"Port\":\"8082\"},\"Username\":\"user1\",\"Password\":\"1234\",\"Host\":\"localhost\",\"Port\":\"5433\",\"Database\":\"db1\"}" func="goEdu/internal/config.GetConfig.func1()" file="config.go:46"
+time="2024-06-22T16:20:30+05:00" level=info msg="Start application" func="main.main()" file="main.go:12"
+time="2024-06-22T16:33:04+05:00" level=info msg="env: CONFIG_FILE not set. Default: \"config.yaml\"" func="goEdu/internal/config.GetConfig.func1()" file="config.go:36"
+time="2024-06-22T16:33:04+05:00" level=debug msg="Try to read config file config.yaml" func="goEdu/internal/config.GetConfig.func1()" file="config.go:39"
+time="2024-06-22T16:33:04+05:00" level=debug msg="Config file read. Config: {\"Server\":{\"Port\":\"8082\"},\"Username\":\"user1\",\"Password\":\"1234\",\"Host\":\"localhost\",\"Port\":\"5433\",\"Database\":\"db1\"}" func="goEdu/internal/config.GetConfig.func1()" file="config.go:46"
+time="2024-06-22T16:33:04+05:00" level=error msg="Failed to connect to database. Try again..." func="goEdu/pkg/client/postgres.NewClient()" file="postgres.go:32"
+time="2024-06-22T16:33:05+05:00" level=error msg="Failed to connect to database. Try again..." func="goEdu/pkg/client/postgres.NewClient()" file="postgres.go:32"
+time="2024-06-22T16:33:06+05:00" level=error msg="Failed to connect to database. Try again..." func="goEdu/pkg/client/postgres.NewClient()" file="postgres.go:32"
+time="2024-06-22T16:33:07+05:00" level=error msg="Failed to connect to database. Try again..." func="goEdu/pkg/client/postgres.NewClient()" file="postgres.go:32"
+time="2024-06-22T16:33:08+05:00" level=error msg="Failed to connect to database. Try again..." func="goEdu/pkg/client/postgres.NewClient()" file="postgres.go:32"
+time="2024-06-22T16:33:09+05:00" level=fatal msg="!!! Creating new client ERROR !!! \n Error: failed to connect to `user=user1 database=db1`:\n\t[::1]:5433 (localhost): dial error: dial tcp [::1]:5433: connectex: No connection could be made because the target machine actively refused it.\n\t127.0.0.1:5433 (localhost): dial error: dial tcp 127.0.0.1:5433: connectex: No connection could be made because the target machine actively refused it.\n\t[::1]:5433 (localhost): dial error: dial tcp [::1]:5433: connectex: No connection could be made because the target machine actively refused it.\n\t127.0.0.1:5433 (localhost): dial error: dial tcp 127.0.0.1:5433: connectex: No connection could be made because the target machine actively refused it." func="goEdu/internal/crud.init.0()" file="init.go:21"
+time=2024-06-22T16:39:03+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-22T16:39:03+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-22T16:39:03+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-22T16:39:03+05:00 level=error msg=Failed to connect to database. Try again... func=goEdu/pkg/client/postgres.NewClient() file=postgres.go:32
+time=2024-06-22T16:39:04+05:00 level=error msg=Failed to connect to database. Try again... func=goEdu/pkg/client/postgres.NewClient() file=postgres.go:32
+time=2024-06-22T16:39:05+05:00 level=error msg=Failed to connect to database. Try again... func=goEdu/pkg/client/postgres.NewClient() file=postgres.go:32
+time=2024-06-22T16:39:06+05:00 level=error msg=Failed to connect to database. Try again... func=goEdu/pkg/client/postgres.NewClient() file=postgres.go:32
+time=2024-06-22T16:39:07+05:00 level=error msg=Failed to connect to database. Try again... func=goEdu/pkg/client/postgres.NewClient() file=postgres.go:32
+time=2024-06-22T16:39:08+05:00 level=fatal msg=!!! Creating new client ERROR !!! 
+ Error: failed to connect to `user=user1 database=db1`:
+	[::1]:5433 (localhost): dial error: dial tcp [::1]:5433: connectex: No connection could be made because the target machine actively refused it.
+	127.0.0.1:5433 (localhost): dial error: dial tcp 127.0.0.1:5433: connectex: No connection could be made because the target machine actively refused it.
+	[::1]:5433 (localhost): dial error: dial tcp [::1]:5433: connectex: No connection could be made because the target machine actively refused it.
+	127.0.0.1:5433 (localhost): dial error: dial tcp 127.0.0.1:5433: connectex: No connection could be made because the target machine actively refused it. func=goEdu/internal/crud.init.0() file=init.go:21
+time=2024-06-22T16:51:02+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-22T16:51:02+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-22T16:51:02+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-22T16:51:02+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-22T16:51:31+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-22T16:51:31+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-22T16:51:31+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-22T16:51:31+05:00 level=info msg=Start application func=main.main() file=main.go:12
+[36mINFO[0m[2024-06-22T17:21:37+05:00]config.go:36 goEdu/internal/config.GetConfig.func1() env: CONFIG_FILE not set. Default: "config.yaml" 
+[37mDEBU[0m[2024-06-22T17:21:37+05:00]config.go:39 goEdu/internal/config.GetConfig.func1() Try to read config file config.yaml          
+[37mDEBU[0m[2024-06-22T17:21:37+05:00]config.go:46 goEdu/internal/config.GetConfig.func1() Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} 
+[36mINFO[0m[2024-06-22T17:21:37+05:00]main.go:12 main.main() Start application                            
+[36mINFO[0m[2024-06-22T17:22:15+05:00]config.go:36 goEdu/internal/config.GetConfig.func1() env: CONFIG_FILE not set. Default: "config.yaml" 
+[37mDEBU[0m[2024-06-22T17:22:15+05:00]config.go:39 goEdu/internal/config.GetConfig.func1() Try to read config file config.yaml          
+[37mDEBU[0m[2024-06-22T17:22:15+05:00]config.go:46 goEdu/internal/config.GetConfig.func1() Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} 
+[36mINFO[0m[2024-06-22T17:22:15+05:00]main.go:12 main.main() Start application                            
+time=2024-06-22T17:24:40+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-22T17:24:40+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-22T17:24:40+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-22T17:24:40+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-25T23:01:23+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-25T23:01:23+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-25T23:01:23+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-25T23:01:23+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-25T23:03:35+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-25T23:03:35+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-25T23:03:35+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-25T23:03:35+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-25T23:03:45+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-25T23:03:45+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-25T23:03:45+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-25T23:03:45+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-25T23:07:43+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-25T23:07:43+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-25T23:07:43+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-25T23:07:43+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-25T23:10:08+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-25T23:10:08+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-25T23:10:08+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-25T23:10:08+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-25T23:10:08+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-25T23:16:27+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-25T23:16:27+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-25T23:16:27+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-25T23:16:27+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-25T23:16:27+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-25T23:17:49+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-25T23:17:49+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-25T23:17:49+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-25T23:17:49+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-25T23:17:49+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T11:02:55+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T11:02:55+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T11:02:55+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T11:02:55+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T11:02:55+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T11:04:27+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T11:04:27+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T11:04:27+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T11:04:27+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T11:04:27+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T11:06:58+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T11:06:58+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T11:06:58+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T11:06:58+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T11:06:58+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T13:48:00+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T13:48:00+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T13:48:00+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T13:48:00+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T13:48:00+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T13:48:56+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T13:48:56+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T13:48:56+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T13:48:56+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T13:48:56+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T13:55:53+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T13:55:53+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T13:55:53+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T13:55:53+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T13:55:53+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T13:56:00+05:00 level=debug msg=Param uuid: 71392cb5-1f6e-4a3e-983b-44f40187c841 func=goEdu/internal/route/api/v1.FindUserByUUID() file=user.go:64
+time=2024-06-26T14:22:51+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T14:22:51+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T14:22:51+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T14:22:51+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T14:22:51+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T15:23:00+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T15:23:00+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T15:23:00+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T15:23:00+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T15:23:00+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T15:27:54+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T15:27:54+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T15:27:54+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T15:27:54+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T15:27:54+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T16:39:15+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T16:39:15+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T16:39:15+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T16:39:15+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T16:39:15+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T19:17:31+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T19:17:31+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T19:17:31+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T19:17:31+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T19:17:31+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T19:24:47+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T19:24:47+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T19:24:47+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T19:24:47+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T19:24:47+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T19:27:40+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T19:27:40+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T19:27:40+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T19:27:40+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T19:27:40+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T19:30:39+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T19:30:39+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T19:30:39+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T19:30:39+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T19:30:39+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T19:33:20+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T19:33:20+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T19:33:20+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T19:33:20+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T19:33:20+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T19:53:45+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T19:53:45+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T19:53:45+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T19:53:45+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T19:53:45+05:00 level=info msg=Start application func=main.main() file=main.go:12
+time=2024-06-26T21:06:02+05:00 level=info msg=env: CONFIG_FILE not set. Default: "config.yaml" func=goEdu/internal/config.GetConfig.func1() file=config.go:36
+time=2024-06-26T21:06:02+05:00 level=debug msg=Try to read config file config.yaml func=goEdu/internal/config.GetConfig.func1() file=config.go:39
+time=2024-06-26T21:06:02+05:00 level=debug msg=Config file read. Config: {"Server":{"Port":"8082"},"Username":"user1","Password":"1234","Host":"localhost","Port":"5433","Database":"db1"} func=goEdu/internal/config.GetConfig.func1() file=config.go:46
+time=2024-06-26T21:06:02+05:00 level=info msg=Connection to database func=goEdu/pkg/client/postgres.NewPool() file=postgres.go:47
+time=2024-06-26T21:06:02+05:00 level=info msg=Start application func=main.main() file=main.go:12

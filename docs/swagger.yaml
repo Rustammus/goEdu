@@ -1,0 +1,268 @@
+basePath: /api/v1
+definitions:
+  dto.CreateUserDTO:
+    properties:
+      email:
+        example: john.doe@example.com
+        type: string
+      name:
+        example: John Doe
+        type: string
+      password:
+        example: UwU
+        type: string
+      phone:
+        example: "+78005553535"
+        type: string
+    required:
+    - name
+    - phone
+    type: object
+  dto.ReadUserDTO:
+    properties:
+      created_at:
+        example: "2020-01-01T00:00:00Z"
+        type: string
+      crystals:
+        example: 12
+        type: integer
+      email:
+        example: john.doe@example.com
+        type: string
+      is_blocked:
+        example: false
+        type: boolean
+      name:
+        example: John Doe
+        type: string
+      phone:
+        example: "+78005553535"
+        type: string
+      updated_at:
+        example: "2020-01-01T00:00:00Z"
+        type: string
+      uuid:
+        example: 550e8400-e29b-41d4-a716-446655440000
+        type: string
+    type: object
+  dto.UpdateUserDTO:
+    properties:
+      email:
+        example: john.doe@example.com
+        type: string
+      name:
+        example: John Doe
+        type: string
+      phone:
+        example: "+78005553535"
+        type: string
+    required:
+    - name
+    - phone
+    type: object
+  requestSchemas.InputUserSignIn:
+    properties:
+      email:
+        example: test@test.com
+        format: email
+        type: string
+      password:
+        example: UwU
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  schemas.BaseResponse:
+    properties:
+      data: {}
+      error:
+        type: string
+      massage:
+        type: string
+    type: object
+externalDocs:
+  description: OpenAPI
+  url: https://swagger.io/resources/open-api/
+host: localhost:8082
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server celler server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /user:
+    post:
+      consumes:
+      - application/json
+      description: Create users
+      parameters:
+      - description: User base
+        in: body
+        name: CreateUserDTO
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateUserDTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/schemas.BaseResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.BaseResponse'
+      summary: Create user
+      tags:
+      - User API
+  /user/{uuid}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete users
+      parameters:
+      - description: User UUID
+        format: uuid
+        in: path
+        name: uuid
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/schemas.BaseResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/schemas.BaseResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.BaseResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete user
+      tags:
+      - User API
+    get:
+      consumes:
+      - application/json
+      description: Find User by uuid
+      parameters:
+      - description: User UUID
+        format: uuid
+        in: path
+        name: uuid
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ReadUserDTO'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.BaseResponse'
+      summary: Find User by uuid
+      tags:
+      - User API
+    put:
+      consumes:
+      - application/json
+      description: Update users
+      parameters:
+      - description: User base
+        in: body
+        name: CreateUserDTO
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UpdateUserDTO'
+      - description: User UUID
+        format: uuid
+        in: path
+        name: uuid
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ReadUserDTO'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.BaseResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update user
+      tags:
+      - User API
+  /user/list:
+    get:
+      consumes:
+      - application/json
+      description: List all users
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.ReadUserDTO'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.BaseResponse'
+      summary: List users
+      tags:
+      - User API
+  /user/login:
+    post:
+      consumes:
+      - application/json
+      description: LogIn users
+      parameters:
+      - description: User email and password
+        in: body
+        name: InputUserSignIn
+        required: true
+        schema:
+          $ref: '#/definitions/requestSchemas.InputUserSignIn'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/schemas.BaseResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.BaseResponse'
+      summary: LogIn user
+      tags:
+      - UserAuth API
+securityDefinitions:
+  ApiKeyAuth:
+    description: Used for
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
