@@ -2,29 +2,28 @@ package route
 
 import (
 	"github.com/gin-gonic/gin"
-	"goEdu/internal/config"
-	"goEdu/internal/route/api/v1"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	v1 "goEdu/internal/route/api/v1"
+	"goEdu/internal/service"
+	"goEdu/pkg/auth"
 )
 
-func SetupRouter(conf config.Config) *gin.Engine {
-	r := gin.Default()
+type Handler struct {
+	Services     *service.Services
+	TokenManager auth.TokenManager
+}
 
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-	apiv1 := r.Group("/api/v1")
-	{
-		apiv1.GET("/hello", v1.Greetings)
-		userAPI := apiv1.Group("/user")
-		{
-			userAPI.POST("", v1.CreateUser)
-			userAPI.GET("/list", v1.ListAllUser)
-			userAPI.GET("/:uuid", v1.FindUserByUUID)
-			userAPI.PUT("/:uuid", v1.UpdateUserByUUID)
-			userAPI.DELETE("/:uuid", v1.DeleteUserByUUID)
-		}
-	}
+func NewHandler(s *service.Services, t auth.TokenManager) *Handler {
+	return &Handler{Services: s, TokenManager: t}
+}
+
+func (h *Handler) Init() *gin.Engine {
+	r := gin.Default()
+	handlerV1 := v1.NewHandler(h.Services, h.TokenManager)
+	apiV1 := r.Group("/api/v1")
+	handlerV1.Init(apiV1)
+
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	return r
 }

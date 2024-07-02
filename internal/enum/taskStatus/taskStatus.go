@@ -1,11 +1,13 @@
-package enum
+package taskStatus
 
-type StatusEnum string
+type TaskStatus string
 
 const (
-	created StatusEnum = "created"
-	userUploading
+	Created         TaskStatus = "created"
+	UserUploading   TaskStatus = "user_uploading"
+	Queued          TaskStatus = "queued"
+	Processing      TaskStatus = "processing"
+	ServerUploading TaskStatus = "server_uploading"
+	Completed       TaskStatus = "completed"
+	Error           TaskStatus = "error"
 )
-
-type TaskStatus struct {
-}

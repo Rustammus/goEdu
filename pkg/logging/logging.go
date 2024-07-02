@@ -42,20 +42,18 @@ func init() {
 			return fmt.Sprintf("%s()", frame.Function), fmt.Sprintf("%s:%d", filename, frame.Line)
 		},
 	})
-	err := os.MkdirAll("logs", 0644)
-	if err != nil {
-		panic(err)
-	}
-
-	allLogsFile, err := os.OpenFile("logs/all.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0640)
-	if err != nil {
-		panic(err)
-	}
+	//err := os.MkdirAll("logs", 0644)
+	//if err != nil {
+	//	panic(err)
+	//}
+	//allLogsFile, err := os.OpenFile("logs/all.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0640)
+	//if err != nil {
+	//	panic(err)
+	//}
 
 	l.SetOutput(io.Discard)
-
 	l.AddHook(&writerHook{
-		Writer:   []io.Writer{allLogsFile, os.Stdout},
+		Writer:   []io.Writer{os.Stdout},
 		LogLevel: logrus.AllLevels,
 	})
 

@@ -44,21 +44,27 @@ func NewPool(ctx context.Context, cf config.Storage) (pool *pgxpool.Pool, err er
 	logger := logging.GetLogger()
 	dsn := fmt.Sprintf("postgresql://%s:%s@%s:%s/%s", cf.Username, cf.Password, cf.Host, cf.Port, cf.Database)
 	maxAttempts := 5
+
 	logger.Info("Connection to database")
+	ctxPool, cancel := context.WithTimeout(ctx, 5*time.Second)
+	defer cancel()
+	pool, err = pgxpool.New(ctxPool, dsn)
+	if err != nil {
+		logger.Error(err.Error())
+		logger.Fatalln("Failed to create connection pool. Abort start app.")
+	}
 
-	for maxAttempts > 0 {
-		ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
-		defer cancel()
-
-		pool, err = pgxpool.New(ctx, dsn)
-		if err != nil {
-			logger.Error("Failed to connect to database. Try again...")
-			maxAttempts--
+	ctxPing, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	for ; maxAttempts > 0; maxAttempts-- {
+		if err = pool.Ping(ctxPing); err != nil {
+			logger.Error(err.Error())
 			time.Sleep(time.Second)
 			continue
 		}
-		return pool, err
+		return pool, nil
 	}
+	logger.Fatalln("Failed to connect to database. Abort start app.")
 
-	return pool, err
+	return nil, nil
 }
